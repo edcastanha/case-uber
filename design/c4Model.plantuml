@@ -1,0 +1,28 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Context diagram for Uber-like System
+
+' Definindo atores
+Person(passenger, "Passenger", "Solicita corridas e acompanha o motorista")
+Person(driver, "Driver", "Aceita ou recusa corridas e atualiza localização")
+
+' Definindo sistemas externos
+System_Ext(payment_system, "Payment System", "Processa pagamentos")
+System_Ext(map_system, "Map System", "Fornece rotas e localizações em tempo real")
+System_Ext(notification_system, "Notification System", "Envia notificações para passageiros e motoristas")
+System_Ext(design_system, "Design System", "Fornece componentes de UI e diretrizes de design")
+
+' Definindo o sistema principal
+System(uber_system, "Uber System", "Gerencia corridas, motoristas e passageiros")
+
+' Relacionamentos
+Rel(passenger, uber_system, "Solicita corrida\nConfirma corrida\nAcompanha motorista")
+Rel(uber_system, driver, "Atribui corrida\nNotifica sobre novas corridas")
+Rel(uber_system, payment_system, "Processa pagamentos")
+Rel(uber_system, map_system, "Obtém rotas e localizações")
+Rel(uber_system, notification_system, "Envia notificações")
+Rel(uber_system, design_system, "Utiliza componentes de UI")
+@enduml
