@@ -1,5 +1,7 @@
 # case-system-design-uber
 
+[Esboço Inicial - C4 Model](./design/img]/C4Model.png)
+
 # Desafio de System Design do Uber
 
 O objetivo deste desafio é projetar um sistema que atenda aos seguintes requisitos de engenharia, detalhando o que será abordado e o que está fora do escopo.
